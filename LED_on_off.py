@@ -8,7 +8,7 @@ led_pin = 18
 GPIO.setup(led_pin,GPIO.OUT)
 try:
     for i in range(10):
-    	print("On")
+        print("On")
         GPIO.output(led_pin,True) # LED on
         time.sleep(0.5) # delay for 0.5 seconds
         print("Off")
