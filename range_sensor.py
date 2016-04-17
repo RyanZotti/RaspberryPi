@@ -27,7 +27,7 @@ while GPIO.input(ECHO)==1:
     pulse_end = time.time()
 
 pulse_duration = pulse_end - pulse_start
-distance = pulse_duration x 17150
+distance = pulse_duration * 17150
 distance = round(distance, 2)
 print("Distance:",distance,"cm")
 GPIO.cleanup()
