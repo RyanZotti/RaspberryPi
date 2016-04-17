@@ -4,6 +4,7 @@ led_pin = 18
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(led_pin,GPIO.OUT)
 
+# Number for PWM signifies pulses per second
 pwm_led = GPIO.PWM(led_pin, 500)
 pwm_led.start(100)
 
