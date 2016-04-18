@@ -41,4 +41,12 @@ class Motor:
         self.pwm_backward.ChangeDutyCycle(0)
 
 motor1 = Motor(16, 18, 22)
-motor1.forward(100)
+motor1.forward(10)
+
+#GPIO.output(motor1.pwm_forward,GPIO.HIGH)
+#GPIO.output(motor1.pwm_backward,GPIO.LOW)
+#GPIO.output(motor1.pinControl,GPIO.HIGH)
+sleep(2)
+motor1.stop()
+
+GPIO.cleanup()
