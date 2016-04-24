@@ -39,16 +39,16 @@ class PostHandler(tornado.web.RequestHandler):
     	elif command['type'] == 'turn':
     		turn = command['value']
     		if turn == 'h':
-    			steering_motor.left(50)
-    			sleep(0.5)
-				steering_motor.stop()
-			elif turn == 'l':
-				steering_motor.right(50)
-    			sleep(0.5)
-				steering_motor.stop()
+                    steering_motor.left(50)
+                    sleep(0.5)
+                    steering_motor.stop()
+                elif turn == 'l':
+                    steering_motor.right(50)
+                    sleep(0.5)
+                    steering_motor.stop()
     		print(turn)
     	else:
-    		print('bad command')
+                print('bad command')
 
 def make_app():
     return tornado.web.Application([

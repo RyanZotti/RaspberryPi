@@ -49,7 +49,7 @@ class SteeringMotor(Motor):
         self.backward(speed)
 
 motor1 = Motor(16, 18, 22)
-motor1.forward(10)
+motor1.forward(50)
 
 #GPIO.output(motor1.pwm_forward,GPIO.HIGH)
 #GPIO.output(motor1.pwm_backward,GPIO.LOW)
@@ -58,7 +58,7 @@ sleep(2)
 motor1.stop()
 
 steering_motor = SteeringMotor(19, 21, 23)
-steering_motor.left(10)
+steering_motor.left(50)
 sleep(0.5)
 steering_motor.stop()
 
