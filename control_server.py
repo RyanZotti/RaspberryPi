@@ -17,13 +17,13 @@ class PostHandler(tornado.web.RequestHandler):
         if command['type'] == 'speed':
             speed = command['value']
         if speed == '1':
-            motor.backward(25)
-        elif speed == '2':
-            motor.backward(50)
-        elif speed == '3':
-            motor.backward(75)
-        elif speed == '4':
             motor.backward(100)
+        elif speed == '2':
+            motor.backward(75)
+        elif speed == '3':
+            motor.backward(50)
+        elif speed == '4':
+            motor.backward(25)
         elif speed == '5':
             motor.stop()
             GPIO.cleanup()
@@ -98,16 +98,12 @@ class SteeringMotor(Motor):
     def right(self,speed):
         self.backward(speed)
 
-#if __name__ == "__main__":
 GPIO.setmode(GPIO.BOARD)
 motor = Motor(16,18,22)
 steering_motor = SteeringMotor(19, 21, 23)
 app = make_app()
 app.listen(8888)
 tornado.ioloop.IOLoop.current().start()
-#GPIO.setmode(GPIO.BOARD)
-#motor = Motor(16, 18, 22)
-#steering_motor = SteeringMotor(19, 21, 23)
 
 
 
