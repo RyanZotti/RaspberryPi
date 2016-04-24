@@ -15,40 +15,40 @@ class PostHandler(tornado.web.RequestHandler):
     	command = data_json['command']
     	print(command)
     	if command['type'] == 'speed':
-    		speed = command['value']
-    		if speed == '1':
-    			motor.backward(25)
-    		elif speed == '2':
-    			motor.backward(50)
-    		elif speed == '3':
-    			motor.backward(75)
-    		elif speed == '4':
-    			motor.backward(100)
-    		elif speed == '5':
-    			motor.stop()
-    			GPIO.cleanup()
-    		elif speed == '6':
-    			motor.forward(25)
-    		elif speed == '7':
-    			motor.forward(50)
-    		elif speed == '8':
-    			motor.forward(75)
-    		elif speed == '9':
-    			motor.forward(100)
-    		print(speed)
-    	elif command['type'] == 'turn':
-    		turn = command['value']
-    		if turn == 'h':
-                    steering_motor.left(50)
-                    sleep(0.5)
-                    steering_motor.stop()
-                elif turn == 'l':
-                    steering_motor.right(50)
-                    sleep(0.5)
-                    steering_motor.stop()
-    		print(turn)
-    	else:
-                print('bad command')
+            speed = command['value']
+            if speed == '1':
+                motor.backward(25)
+            elif speed == '2':
+                motor.backward(50)
+            elif speed == '3':
+                motor.backward(75)
+            elif speed == '4':
+                motor.backward(100)
+            elif speed == '5':
+                motor.stop()
+                GPIO.cleanup()
+            elif speed == '6':
+                motor.forward(25)
+            elif speed == '7':
+                motor.forward(50)
+            elif speed == '8':
+                motor.forward(75)
+            elif speed == '9':
+                motor.forward(100)
+                print(speed)
+        elif command['type'] == 'turn':
+            turn = command['value']
+            if turn == 'h':
+                steering_motor.left(50)
+                sleep(0.5)
+                steering_motor.stop()
+            elif turn == 'l':
+                steering_motor.right(50)
+                sleep(0.5)
+                steering_motor.stop()
+                print(turn)
+        else:
+            print('bad command')
 
 def make_app():
     return tornado.web.Application([
