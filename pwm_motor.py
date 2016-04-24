@@ -58,7 +58,9 @@ sleep(2)
 motor1.stop()
 
 steering_motor = SteeringMotor(19, 21, 23)
-steering_motor.left(10)
+steering_motor.left(50)
+sleep(0.5)
+steering_motor.right(50)
 sleep(0.5)
 steering_motor.stop()
 
