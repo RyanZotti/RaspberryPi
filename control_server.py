@@ -26,7 +26,7 @@ class PostHandler(tornado.web.RequestHandler):
             motor.backward(25)
         elif speed == '5':
             motor.stop()
-            GPIO.cleanup()
+            #GPIO.cleanup()
         elif speed == '6':
             motor.forward(25)
         elif speed == '7':
