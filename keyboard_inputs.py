@@ -8,6 +8,7 @@ while True:
         if key in speeds:
             command = {'type':'speed','value':key}
             r = requests.post('http://localhost:8888/post',json={'command':command})
+            print(r.text)
         elif key in turns:
             command = {'type':'turn','value':key}
             r = requests.post('http://localhost:8888/post',json={'command':command})
