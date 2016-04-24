@@ -49,4 +49,9 @@ motor1.forward(10)
 sleep(2)
 motor1.stop()
 
+steering_motor = Motor(19, 21, 23)
+steering_motor.forward(10)
+sleep(0.5)
+steering_motor.stop()
+
 GPIO.cleanup()
