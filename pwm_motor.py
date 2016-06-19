@@ -33,7 +33,8 @@ class Motor:
         self.pwm_left.start(0)
         self.pwm_right.start(0)
 
-        GPIO.output(self.pinControl,GPIO.HIGH) 
+        GPIO.output(self.pinControlStraight,GPIO.HIGH) 
+        GPIO.output(self.pinControlSteering,GPIO.HIGH) 
 
     def forward(self, speed):
         """ pinForward is the forward Pin, so we change its duty
