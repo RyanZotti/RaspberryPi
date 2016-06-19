@@ -68,14 +68,6 @@ class Motor:
         self.pwm_forward.ChangeDutyCycle(0)
         self.pwm_backward.ChangeDutyCycle(0)
 
-class SteeringMotor(Motor):
-
-    def left(self,speed):
-        self.forward(speed)
-
-    def right(self,speed):
-        self.backward(speed)
-
 motor = Motor(16, 18, 22, 19, 21, 23)
 motor.left(50)
 motor.forward(50)
