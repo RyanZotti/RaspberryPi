@@ -5,8 +5,8 @@ import time
 # http://www.modmypi.com/blog/hc-sr04-ultrasonic-range-sensor-on-the-raspberry-pi
 
 GPIO.setmode(GPIO.BCM)
-TRIG = 23
-ECHO = 24
+TRIG = 2
+ECHO = 3
 print("Distance Measurement In Progress")
 GPIO.setup(TRIG,GPIO.OUT)
 GPIO.setup(ECHO,GPIO.IN)
